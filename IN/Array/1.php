@@ -34,8 +34,6 @@ echo $mes[$_GET["n_mes"]];
 <div id="x" </div>
 <div id="r" </div>
 
-
-
 <script>
 mes = [
 	'No hay mes 0.',
@@ -52,6 +50,7 @@ mes = [
 	'noviembre',
 	'diciembre',
 ]
+
 console.log(i);
-document.getElementById('n').innerHTML =mes[i];
+document.getElementById('i').innerHTML =txt;
 </script>
