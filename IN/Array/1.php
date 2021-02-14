@@ -28,15 +28,14 @@ $txt.='</select>';
 echo $txt;
 ?>
 </form>
+<div style="background-color:pink;"id="meses">resultado j</div>
 <?php
 echo $mes[$_GET["n_mes"]];
 ?>
 <div id="x" </div>
-<div id="r" </div>
-
 <script>
-mes = [
-	'No hay mes 0.',
+function  determinar(){
+mes  =  [
 	'enero',
 	'febrero',
 	'marzo',
@@ -49,8 +48,9 @@ mes = [
 	'octubre',
 	'noviembre',
 	'diciembre',
-]
-
-console.log(i);
-document.getElementById('i').innerHTML =txt;
+] ;
+meses= document.getElementById('x').value ;
+document.getElementById('meses').innerHTML= mes;
+}
+determinar();
 </script>

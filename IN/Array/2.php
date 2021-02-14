@@ -1,16 +1,17 @@
+<?php
+if (!isset($_GET["semana"]))
+	$_GET["semana"]=1;
+?>
 <center><h1>Ejercicio 2</h1></center>
 <h2>Crea un array con los días de la semana y muestra el que te indique el usuario a través de un formulario con un campo de texto</h2>
 <form>
-<input type="text" name="dia"/>
-<button onclick="seleccionar()"> seleccionar </button>
+<input value="<?=$_GET['semana']?>" type="text" name="semana" id ="ndia" onkeyup="calcular();"/>
+<button> seleccionar </button>
 </form>
-<div id="dia" </div>
+<div style="background-color:pink;"id="dia">resultado </div>
 <?php
 //arrays dias de la semana
-if (!isset($_GET["semana"]))
-$_GET["semana"]=1;
 $semana = [
-	'No hay dia 0 sintax error',
 	'lunes',
 	'martes',
 	'miercoles',
@@ -19,12 +20,11 @@ $semana = [
 	'sabado',
 	'domingo',
 	];
-echo $semana[$_GET["dia"]];
+echo $semana[$_GET["semana"]-1];
 ?>
-
-<script >
+<script>
+function  calcular(){
 semana  =  [
-	'No hay dia 0 sintax error',
 	'lunes',
 	'martes',
 	'miercoles',
@@ -33,9 +33,8 @@ semana  =  [
 	'sabado',
 	'domingo',
 ] ;
-function  mostrar(){
-semana= document.getElementById('dia').value ;
-document.getElementById('dia').innerHTML= semana[semana-1];
+dia= document.getElementById('ndia').value ;
+document.getElementById('dia').innerHTML= semana[dia-1];
 }
-mostrar();
-</script >
+calcular();
+</script>
